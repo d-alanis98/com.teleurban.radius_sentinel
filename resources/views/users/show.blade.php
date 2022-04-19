@@ -28,7 +28,7 @@
                 throw new Error('Not allowed');
     
             const response = await fetch(url, { 
-                method: 'DELETE'
+                method: 'DELETE',
             });
             return window.location.href = '/users';
         } catch(exception) {
