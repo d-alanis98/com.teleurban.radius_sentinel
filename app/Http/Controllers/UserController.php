@@ -75,14 +75,14 @@ class UserController extends Controller
             return Response('User not found', 404);
         }
 
-        return Redirect("/users/$uri_user");
+        return Redirect(dirname(url()->current()));
     }
 
     public function delete(Request $request, $uri_user) {
         try {
             $user = User::findOrFail($uri_user);
         } catch(ModelNotFoundException $e) {
-            return Response('Not found', 404);
+            return Response('User not found', 404);
         }
 
         $user->delete();
